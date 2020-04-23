@@ -1,26 +1,35 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import CatContainer from './CatContainer'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component{
+  state = {
+    cats: [
+    {
+    name: "Jezebel",
+    place: "couch"
+    },
+    {
+    name: "Luci",
+    place: "floor"
+    },
+    {
+    name: "Kenzi",
+    place: "bed"
+
+    }
+    ]
+  }
+  
+  render (){
+    return (
+      <div className="App">
+      <h1>Cat Stuff</h1>
+      <CatContainer cats={this.state.cats}/>
+      </div>
+    );
+  }
 }
 
 export default App;
